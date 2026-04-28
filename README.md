@@ -21,9 +21,6 @@ Denizli'deki yüz yüze terapi hizmetlerinin yanı sıra, tüm Türkiye ve yurt 
 ### Ana Sayfa
 ![Ana Sayfa Desktop](screenshots/homepage-desktop.png)
 
-### Mobil Görünüm
-![Ana Sayfa Mobil](screenshots/homepage-mobile.png)
-
 ### Hizmetler
 ![Hizmetler](screenshots/services-page.png)
 
@@ -154,7 +151,10 @@ View::composer(['partials.header', 'partials.footer'], function ($view) {
 ## 👨‍💻 Geliştirici
 
 **Burak Berk Şama**
+Bilgisayar Mühendisi
 - GitHub: [@burakberksama](https://github.com/burakberksama)
+- LinkedIn: [@burakberksama](https://www.linkedin.com/in/burakberksama/)
+- Mail: burakberksama@gmail.com
 
 ---
 
