@@ -118,28 +118,36 @@ Siteden gelen yorumlar doğrudan yayınlanmaz. Her yorum "beklemede" statüsüyl
 $validated['status'] = Testimonial::STATUS_PENDING;
 $validated['source'] = Testimonial::SOURCE_WEBSITE;
 $validated['is_active'] = false;
+```
 
+```php
 // Admin panelde bekleyen yorum sayısı badge olarak gösteriliyor
 public static function getNavigationBadge(): ?string
 {
     $count = Testimonial::pending()->count();
     return $count > 0 ? (string) $count : null;
 }
+```
 
-SEO Dostu Türkçe Route Yapısı
+### SEO Dostu Türkçe Route Yapısı
 
+```php
 Route::get('/hizmetler/{slug}', [ServiceController::class, 'show']);
 Route::get('/blog/{slug}', [BlogController::class, 'show']);
 Route::get('/danisan-memnuniyeti', [TestimonialController::class, 'index']);
 Route::post('/danisan-memnuniyeti', [TestimonialController::class, 'store']);
+```
 
-Global Veri Yönetimi
-Header ve footer'ın ihtiyaç duyduğu veriler merkezi bir View Composer ile tüm sayfalara otomatik aktarılıyor
+### Global Veri Yönetimi
 
+Header ve footer'ın ihtiyaç duyduğu veriler merkezi bir View Composer ile tüm sayfalara otomatik aktarılıyor.
+
+```php
 View::composer(['partials.header', 'partials.footer'], function ($view) {
     $view->with('navServices', Service::where('is_active', true)
         ->orderBy('order')->get());
 });
+```
 
 ---
 
